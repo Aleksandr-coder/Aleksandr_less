@@ -2,8 +2,12 @@
 // 1) Создать родительский (главный класс)
 // Класс должен содержать 2 свойства
 // Каждое свойство должно иметь геттеры и сеттеры
-// должен содержать абстрактную функцию возведения в степень -- в низу кода реализовал абстрактную функцию и вывод.
-	 class bar
+// должен содержать абстрактную функцию возведения в степень
+	 abstract class barn
+{
+	abstract public function countCow();
+}
+	 class bar extends barn
  {
  	public int $rack1 = 2;
  	public int $rack2 = 5;
@@ -25,6 +29,10 @@
  	{
  		$this->rack2 = $rack2;
  	}
+ 	public function countCow()
+	{
+		return $this->result = pow($this->rack2, $this->rack1);
+	}
  	
  }
 
@@ -70,10 +78,10 @@
  	}
  }
 
-	class threeBar extends bar
+	final class threeBar extends bar 		// Один наследник не должен быть наследуемым
 	{
-		private $num_threeBar = 8;				// Один наследник не должен быть наследуемым
-
+		public $num_threeBar = 8;
+						
  	public function get_threeBar():int
  	{
  		return $this->num_threeBar;
@@ -167,16 +175,6 @@ echo '<br>';
 
 // В случае если реализован наследник класса содержащего абстрактную функцию то класс должен содержать реализацию абстракции
 
-abstract class barn extends bar
-{
-	abstract public function countCow();
-}
-class cow extends barn
-{
-	public function countCow()
-	{
-		return $this->result = pow($this->rack2, $this->rack1);
-	}
-}
-$animal = new cow();
+
+$animal = new bar();
 echo 'Реализация абстрактной функции(возведения в степень): ' . $animal -> countCow();
