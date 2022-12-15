@@ -1,0 +1,19 @@
+{
+    "name": "cow/cow",
+    "description": "cow",
+    "type": "project",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Core\\": "core/",
+            "Public\\": "public/",
+            "App\\": "app/"
+        }
+    },
+
+    "config": {
+        "optimize-autoloader": true,
+        "preferred-install": "dist",
+        "sort-packages": true
+    }
+}
