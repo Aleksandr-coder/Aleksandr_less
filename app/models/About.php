@@ -6,11 +6,10 @@ class About
 {
     public function index()
     {
-        return
-        [
-            'zoo' => 'Fox',
-            'age' => 4,
-            'name' => 'Kim',
-        ];
+        $dbh = new \PDO('mysql:host=localhost;dbname=myBase', 'root', '');
+        $sth = $dbh->query('SELECT * FROM about');
+        $rows = $sth->fetchAll(\PDO::FETCH_ASSOC);
+
+        return $rows;
     }
 }

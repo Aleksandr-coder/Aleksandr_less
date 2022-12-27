@@ -6,12 +6,10 @@ class Gallery
 {
     public function index()
     {
-        return
-        [
-            'foto' => 'Moon',
-            'age' => 9008,
-            'name' => 'Neo',
-            'lastName' => 'Matrix',
-        ];
+        $dbh = new \PDO('mysql:host=localhost;dbname=myBase', 'root', '');
+        $sth = $dbh->query('SELECT * FROM gallery');
+        $rows = $sth->fetchAll(\PDO::FETCH_ASSOC);
+
+        return $rows;
     }
 }

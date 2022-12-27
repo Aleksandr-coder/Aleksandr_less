@@ -6,11 +6,10 @@ class Admin
 {
     public function index()
     {
-        return
-        [
-            'name' => 'Admin',
-            'password' => '*******',
-            'ip' => '5.196.144.15',
-        ];
+        $dbh = new \PDO('mysql:host=localhost;dbname=myBase', 'root', '');
+        $sth = $dbh->query('SELECT * FROM admins');
+        $rows = $sth->fetchAll(\PDO::FETCH_ASSOC);
+
+        return $rows;
     }
 }
