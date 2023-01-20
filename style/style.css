@@ -1,0 +1,32 @@
+*{
+    font-size: 18px;
+}
+form input{
+    width: 20%;
+    height: 30px;
+    margin: 10px 0;
+}
+
+.error, .successful{
+    color: #f23535;
+    font-size: 22px;
+    font-weight: 600;
+}
+.successful{
+    color: #09a209;
+}
+.submit{
+    width: auto;
+    height: 30px;
+    padding: 0 10px;
+    cursor: pointer;
+    background: #f9ead7;
+    color: #000;
+    border: none;
+    transition: all .3s;
+    border-radius: 5px;
+}
+.submit:hover{
+    background: #f29c2f;
+    transition: all .3s;
+}
